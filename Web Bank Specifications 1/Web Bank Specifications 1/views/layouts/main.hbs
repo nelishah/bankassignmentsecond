@@ -1,0 +1,25 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>{{title}}</title>
+    <link rel='stylesheet' type='text/css' href='/index.css' />
+    {{#if loginPage}}
+      <link rel='stylesheet' type='text/css' href='/login.css' />
+    {{/if}}
+
+    {{#if bankPage}}
+      <link rel='stylesheet' type='text/css' href='/bank.css' />
+    {{/if}}
+  </head>
+  <body>
+    {{{body}}}
+
+  </body>
+  {{#if gotError}}
+    <script defer>
+      const errorElement = document.getElementById('error'); if (errorElement) {
+      setTimeout(() => { errorElement.remove(); }, 2000); }
+    </script>
+  {{/if}}
+</html>
